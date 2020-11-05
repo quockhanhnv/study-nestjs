@@ -8,6 +8,7 @@ import { HttpExceptionFilter } from 'src/exception-filters/http-exception.filter
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
+  // https://docs.nestjs.com/exception-filters sao nó có cái http HttpExceptionFilter kia rồi nó lại ko ra cái fobbiden 
   @Post()
   @UseFilters(new HttpExceptionFilter())
   async create(@Body() createCatDto: CreateCatDto) {
